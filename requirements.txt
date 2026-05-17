@@ -1,0 +1,11 @@
+# Dépendances – Application Emploi du Temps ISAM
+# Installez avec : pip install -r requirements.txt
+
+# Interface graphique : incluse dans Python standard (tkinter)
+# Aucune dépendance externe OBLIGATOIRE.
+
+# Optionnel : export PDF enrichi (sinon export texte formaté)
+reportlab>=4.0.0
+
+# Optionnel : import de données en masse via Excel
+openpyxl>=3.1.0
