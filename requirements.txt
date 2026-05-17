@@ -1,4 +1,4 @@
-# Dépendances – Application Emploi du Temps ISAM
+# Dépendances – Application Emploi du Temps
 # Installez avec : pip install -r requirements.txt
 
 # Interface graphique : incluse dans Python standard (tkinter)
