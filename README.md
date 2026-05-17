@@ -1,20 +1,19 @@
 # Système de Génération des Emplois du Temps Universitaires
-**ISAM – Institut Supérieur des Sciences Arts et Métiers**
 Auteur : NKOA MVENG SEAN | Superviseur : M. NOAH
 
 ---
 
-## 📁 Structure du Projet
+## Structure du Projet
 
 ```
 emploi_du_temps/
 │
-├── main.py                        ← Point d'entrée (Run this file)
-├── requirements.txt               ← Dépendances
+├── main.py                        
+├── requirements.txt               
 │
 ├── models/
-│   ├── entities.py                ← Entités métier (MCD/MLD)
-│   └── repository.py              ← Dépôt en mémoire (remplace la BD)
+│   ├── entities.py                
+│   └── repository.py              ← Dépôt en mémoire 
 │
 ├── services/
 │   ├── contraintes.py             ← Validation contraintes fortes/faibles
@@ -22,9 +21,9 @@ emploi_du_temps/
 │
 ├── ui/
 │   ├── app.py                     ← Fenêtre principale + navigation sidebar
-│   ├── tableau_bord.py            ← Écran Dashboard (stats + génération)
+│   ├── tableau_bord.py            ← Écran Dashboard 
 │   ├── ressources.py              ← Gestion Enseignants/Matières/Salles/Filières
-│   ├── planning.py                ← Grille hebdomadaire (vue calendrier)
+│   ├── planning.py                ← Grille hebdomadaire 
 │   ├── sessions_ui.py             ← Liste et édition manuelle des sessions
 │   ├── contraintes_ui.py          ← Gestion contraintes + détection conflits
 │   └── export_ui.py               ← Export PDF / CSV
@@ -42,15 +41,14 @@ emploi_du_temps/
 ## 🚀 Lancement sous PyCharm
 
 1. **Ouvrir le projet** : `File → Open` → sélectionner le dossier `emploi_du_temps`
-2. **Configurer l'interpréteur** : `File → Settings → Project → Python Interpreter` (Python 3.8+)
+2. **Configurer l'interpréteur** : `File → Settings → Project → Python Interpreter` (Python 3)
 3. **Installer les dépendances optionnelles** :
    ```
    pip install reportlab openpyxl
    ```
-4. **Lancer l'application** : clic droit sur `main.py` → `Run 'main'`
+4. **Lancer l'application** : clic droit sur `main.py` 
 
-> **Tkinter est inclus dans Python standard** – aucune installation requise.
-> Sur Linux, si tkinter est absent : `sudo apt install python3-tk`
+> **Tkinter est inclus dans Python standard** .
 
 ---
 
@@ -74,25 +72,4 @@ emploi_du_temps/
 
 ---
 
-## 🏗️ Architecture Technique
 
-```
-┌─────────────────────────────────┐
-│       Couche Présentation       │  ui/ + utils/
-│   Tkinter – Fenêtres modales    │
-│   Grille calendrier interactive │
-└────────────┬────────────────────┘
-             │
-┌────────────▼────────────────────┐
-│         Couche Métier           │  services/
-│   Validation des contraintes    │
-│   Algorithme de génération      │
-│   Service d'export              │
-└────────────┬────────────────────┘
-             │
-┌────────────▼────────────────────┐
-│         Couche Données          │  models/
-│   Repository en mémoire         │
-│   (remplace la base de données) │
-└─────────────────────────────────┘
-```
